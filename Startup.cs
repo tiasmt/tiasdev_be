@@ -34,6 +34,7 @@ namespace backend
                     {
                         builder.WithOrigins("https://localhost:8080").AllowAnyHeader().AllowAnyMethod();
                         builder.WithOrigins("http://localhost:8080").AllowAnyHeader().AllowAnyMethod();
+                        builder.WithOrigins("https://tiasdev.herokuapp.com").AllowAnyHeader().AllowAnyMethod();
                     });
             });
             services.AddScoped<IBlogPostStorage>(storage => new FileBlogPostStorage(@"C:\Temp\BlogPosts\"));
