@@ -35,9 +35,10 @@ namespace backend
                         builder.WithOrigins("https://localhost:8080").AllowAnyHeader().AllowAnyMethod();
                         builder.WithOrigins("http://localhost:8080").AllowAnyHeader().AllowAnyMethod();
                         builder.WithOrigins("https://tiasdev.herokuapp.com").AllowAnyHeader().AllowAnyMethod();
+                        builder.WithOrigins("http://tiasdev.herokuapp.com").AllowAnyHeader().AllowAnyMethod();
                     });
             });
-            services.AddScoped<IBlogPostStorage>(storage => new FileBlogPostStorage(@"C:\Temp\BlogPosts\"));
+            services.AddScoped<IBlogPostStorage>(storage => new FileBlogPostStorage(@"\Repo\BlogPosts\"));
             services.AddScoped<IBlogPostService, BlogPostService>();
             services.AddControllers();
         }
