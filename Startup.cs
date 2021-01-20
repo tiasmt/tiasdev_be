@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using backend.Repository;
 using backend.Services;
+using System.IO;
 
 namespace backend
 {
@@ -38,7 +39,7 @@ namespace backend
                         builder.WithOrigins("http://tiasdev.herokuapp.com").AllowAnyHeader().AllowAnyMethod();
                     });
             });
-            services.AddScoped<IBlogPostStorage>(storage => new FileBlogPostStorage(@"\Repo\BlogPosts\"));
+            services.AddScoped<IBlogPostStorage>(storage => new FileBlogPostStorage(Directory.GetCurrentDirectory() + @"\Repo\BlogPosts\"));
             services.AddScoped<IBlogPostService, BlogPostService>();
             services.AddControllers();
         }
