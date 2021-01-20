@@ -26,7 +26,8 @@ namespace backend.Repository
         public IEnumerable<BlogPostOverview> GetAll()
         {
             var posts = new List<BlogPostOverview>();
-            foreach (var file in Directory.EnumerateFiles(_directoryPath))
+            var files =  Directory.GetFiles(_directoryPath);
+            foreach (var file in files)
             {
                 var fileStream = new FileStream(file, FileMode.Open);
                 using (var reader = new StreamReader(fileStream))
