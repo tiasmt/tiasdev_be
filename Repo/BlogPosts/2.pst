@@ -48,8 +48,13 @@ The request sent from the frontend hits an API endpoint in our BlogPostControlle
 
 ### Frontend
 
+Upon clicking on a post, a get request for the particular post is done to our backend. The backend returns the data which is then displayed in our browser. The postview may be considered as consisting of containers whereby the title, date and content is added. The content is saved in markdown format which is then parsed to html through an [npm package](https://www.npmjs.com/package/marked).
+
 ### Backend
 
+The backend consists of an API which is expecting the blogpost ID which to retrieve. In our current implemention we decided to use files as storage (which are then added as part of the repository), this makes it easy to update / keep track of all changes while also ease of deployment. 
+
+Future improvments will consist of developing a dashboard where we can keep track of the number of users that are visiting while also seeing which posts are most interesting.
 
 
 
