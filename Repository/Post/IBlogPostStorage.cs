@@ -1,12 +1,13 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using backend.Models;
 
 namespace backend.Repository
 {
     public interface IBlogPostStorage
     {
-        IEnumerable<BlogPostOverview> GetAll();
+        Task<IEnumerable<BlogPostOverview>> GetAll();
 
-        BlogPost Get(int id);
+        Task<BlogPost> Get(int id);
     }
 }

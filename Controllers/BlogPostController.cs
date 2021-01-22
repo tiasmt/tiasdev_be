@@ -22,17 +22,16 @@ namespace backend.Controllers
         }
 
         [HttpGet("GetAll")]
-        public IEnumerable<BlogPostOverview> GetAll()
+        public async Task<IEnumerable<BlogPostOverview>> GetAll()
         {
-            // return _postsOverview;
-            return _blogPostService.GetAllBlogPosts().Reverse();
+            var posts = await _blogPostService.GetAllBlogPosts();
+            return posts.Reverse();
         }
 
         [HttpGet("{id}")]
-        public BlogPost Get(int id)
+        public async Task<BlogPost> Get(int id)
         {
-            // return _posts[id -1];
-            return _blogPostService.GetBlogPost(id);
+            return await _blogPostService.GetBlogPost(id);
         }
     }
 }

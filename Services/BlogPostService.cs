@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using backend.Repository;
 using System.Collections.Generic;
 using backend.Models;
+using System.Threading.Tasks;
 
 namespace backend.Services
 {
@@ -17,14 +18,14 @@ namespace backend.Services
         {
             _storage = storage;
         }
-        public IEnumerable<BlogPostOverview> GetAllBlogPosts()
+        public async Task<IEnumerable<BlogPostOverview>> GetAllBlogPosts()
         {
-            return _storage.GetAll();
+           return await _storage.GetAll();
         }
 
-        public BlogPost GetBlogPost(int Id)
+        public async Task<BlogPost> GetBlogPost(int Id)
         {
-            return _storage.Get(Id);
+            return await _storage.Get(Id);
         }
     }
 
