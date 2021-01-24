@@ -6,7 +6,6 @@ Date:23/01/2021
 Summary:0.9999 ... 
 Body:
 
-## Overview 
 <span style="font-size:150%; font-weight:600">I</span>s 0.9 recurring actually equal to 1? Having a look at the following (3 dots after a number means recurring): <br> <br>
 x = 0.2 ... <br>
 10x = 2.2 ... (Multiply left and right by 10) <br>
@@ -19,6 +18,8 @@ x = 0.9 ... <br>
 10x = 9.9 ... (Multiply left and right by 10)<br>
 9x = 9 (2nd line minus first line)<br>
 x = 1<br>
+
+[Wiki](https://en.wikipedia.org/wiki/0.999...) for more details.
 
 <br>
 <br>
